@@ -8,11 +8,67 @@ import { Stacked, Pie, Button, LineChart, SparkLine } from '../components';
 import { earningData, medicalproBranding, recentTransactions, weeklyStats, dropdownData, SparklineAreaData, ecomPieChartData } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
 import product9 from '../data/product9.jpg';
+import welcome from './../data/welcome-bg.svg';
 
 const ECommerce = () => {
   return (
-    <div className='mt-12'>
-      EComerce
+
+    <div className="mt-24">
+      <div className="flex flex-wrap lg:flex-nowrap justify-center ">
+        <div
+          className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg
+          rounded-xl w-full m-3 bg-hero-pattern bg-no-repeat bg-cover
+           bg-center h-44"
+        >
+          <div className="flex justify-between items-center">
+            <div>
+              <p className="font-bold text-gray-400 pl-3">Earnings</p>
+              <p className="text-5xl pl-3">$63,448.78</p>
+              <Button
+                color='white'
+                bgColor='blue'
+                text='Download'
+                borderRadius='10px'
+                size='md'
+              />
+            </div>
+            <img src={welcome} className='h-44 pb-2' />
+          </div>
+          <div className='mt-6'>
+          </div>
+        </div>
+
+      </div>
+      <div className='flex m-3 flex-wrap justify-center gap-1 items-center'>
+        {earningData.map((item) => (
+          <div
+            key={item.title}
+            className='bg-white dark:text-gray-200 dark:bg-secondary-dark-bg md:w-56 p-4 pt-9 rounded-2xl'
+          >
+            <button
+              type='button'
+              style={{
+                color: item.iconColor,
+                backgroundColor: item.iconBg
+              }}
+              className='text-2x1 opacity-0.9 rounded-full p-4 hover:drop-shadow-xl'
+            >
+              {item.icon}
+            </button>
+            <p className='mt-3'>
+              <span className='text-lg'>
+                {item.amount}
+              </span>
+              <span className={`text-sm text-${item.pcColor} ml-2`}>
+                {item.percentage}
+              </span>
+            </p>
+            <p className='text-sm text-gray-400 mt-1'>
+              {item.title}
+            </p>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
