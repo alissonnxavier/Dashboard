@@ -18,21 +18,24 @@ const ECommerce = () => {
         <div
           className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg
           rounded-xl w-full m-3 bg-hero-pattern bg-no-repeat bg-cover
-           bg-center h-44"
+           bg-center h-44 "
+          style={{ backgroundImage: `url(${welcome})` }}
         >
-          <div className="flex justify-between items-center">
-            <div>
-              <p className="font-bold text-gray-400 pl-3">Earnings</p>
-              <p className="text-5xl pl-3">$63,448.78</p>
-              <Button
-                color='white'
-                bgColor='blue'
-                text='Download'
-                borderRadius='10px'
-                size='md'
-              />
+          <div >
+            <div className='flex justify-between'>
+              <div className='' >
+                <p className="font-bold text-gray-400 pl-3">Earnings</p>
+                <p className="text-5xl pl-3">$63,448.78</p>
+                <Button
+                  color='white'
+                  bgColor='blue'
+                  text='Download'
+                  borderRadius='10px'
+                  size='md'
+                  className='ml-3'
+                />
+              </div>
             </div>
-            <img src={welcome} className='h-44 pb-2' />
           </div>
           <div className='mt-6'>
           </div>
