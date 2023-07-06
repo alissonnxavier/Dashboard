@@ -11,6 +11,9 @@ import product9 from '../data/product9.jpg';
 import welcome from './../data/welcome-bg.svg';
 
 const ECommerce = () => {
+
+  const {currentColor} = useStateContext();
+
   return (
 
     <div className="mt-24">
@@ -28,7 +31,7 @@ const ECommerce = () => {
                 <p className="text-5xl pl-3">$63,448.78</p>
                 <Button
                   color='white'
-                  bgColor='blue'
+                  bgColor={currentColor}
                   text='Download'
                   borderRadius='10px'
                   size='md'
@@ -111,7 +114,7 @@ const ECommerce = () => {
 
               <div className='mt-5'>
                 <SparkLine
-                  currentColor='blue'
+                  currentColor={currentColor}
                   id='line-sparkline'
                   type='Line'
                   height='80px'
@@ -123,7 +126,7 @@ const ECommerce = () => {
               <div className='mt-10'>
                 <Button
                   color='white'
-                  bgColor='blue'
+                  bgColor={currentColor}
                   text='Download report'
                   borderRadius='10px'
                 />
